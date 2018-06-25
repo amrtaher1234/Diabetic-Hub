@@ -1,0 +1,40 @@
+
+<body>
+    <p>.</p>
+    <div  class="form-wrapper" >
+      <form (ngSubmit)="submit()">  
+        <div class="">
+    <h5>Registraion</h5>
+    
+    <mat-form-field >
+        <input [(ngModel)]='_User.name' #name="ngModel" minlength="4" class="form-control"  type="text" matInput placeholder="Name" required name="Name">
+      </mat-form-field>
+      
+
+    <mat-form-field>
+      <input [(ngModel)]="_User.email" #email="ngModel" minlength="5" class="form-control" [(ngModel)]="Email"  type="email" matInput placeholder="Email" required name="Email">
+    </mat-form-field>
+    
+    
+    <div>
+      <mat-form-field>
+      <input [(ngModel)]="_User.password" #password="ngModel" class="form-control" [(ngModel)]="Password"  type="password" matInput placeholder="Password"  required name="Password">
+    </mat-form-field>
+    
+    <mat-form-field>
+        <input [(ngModel)]='_User.age' name="age" #age='ngModel' required class="form-control"  type="number" matInput placeholder="Age">
+      </mat-form-field>
+    
+      <div *ngIf="incorrect" class="alert alert-danger">Password or Email are not correct</div>
+    
+    
+    <button [disabled]="!email.valid || !password.valid" type="submit" mat-raised-button color="primary">Sign Up</button>
+      </div>
+    </div>
+    </form>
+    </div>
+    
+
+    </body>
+    
+    

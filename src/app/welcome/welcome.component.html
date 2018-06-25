@@ -1,0 +1,38 @@
+
+<div class="welcome container-fluid">
+
+  <div class="mainNav">
+    <ul class="nav justify-content-end">
+        <li class="nav-item">
+          <a (click)="goRegister()"  id="register" class="nav-link">Register</a>
+        </li>
+        <li class="nav-item">
+          <a (click)="goLogin()" id="login"  class="nav-link">Login In</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="">About The Application</a>
+        </li>
+      </ul>
+      </div>
+
+
+
+<h1>Diabetic Hub Monitoring Intelligent System.</h1>
+
+<div class="subtext">A companion for type one <b>diabetic patients</b> to help them decide on what doses to take, what food to eat and much more.</div>
+
+</div>
+
+<div>
+  <app-welcome-content></app-welcome-content>
+</div>
+
+<div class="forms">
+<div *ngIf="_LoginBool">
+<app-form id="Login"></app-form>
+</div>
+<div *ngIf=!_LoginBool>
+  <app-register id="Register"></app-register>
+</div>
+</div>
+

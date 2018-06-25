@@ -1,1 +1,49 @@
 /* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import url('https://fonts.googleapis.com/css?family=Quicksand');
+/* @import url('https://unpkg.com/bootstrap@3.3.7/dist/css/bootstrap.min.css'); */
+@import url("https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css");
+@import url('https://fonts.googleapis.com/css?family=Indie+Flower');
+@import url('https://fonts.googleapis.com/css?family=Bree+Serif');
+@import url('https://fonts.googleapis.com/css?family=Alfa+Slab+One');
+@import url('https://fonts.googleapis.com/css?family=Neuton');
+
+
+
+
+.nav-control
+{
+  margin-bottom: 0px; 
+}
+.navbar-brand
+{
+  font-size: 2.0rem; 
+  font-family: sans-serif; 
+}
+
+
+
+
+
+
+
+.mainNav ul{
+  font-size: 24px;
+  margin-right: 70px;
+  color: white; 
+  font-family: "Bree Serif"; 
+}
+.mainNav ul a{
+  color: white; 
+  border-bottom: white 3px solid ; 
+}
+.mainNav ul a:hover{
+  border-bottom: black 3px solid; 
+  color: black; 
+
+}
+.mainNav li{
+  margin-top: 33px;
+  margin-right: 25px; 
+  margin-left: 25px; 
+}

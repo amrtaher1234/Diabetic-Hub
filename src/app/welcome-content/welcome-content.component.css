@@ -1,0 +1,62 @@
+.welcome-content
+{
+    font-family: 'Opne Sans Pro'; 
+    margin-top: 150px; 
+    width: 66%;
+    margin: 150px auto 20px auto; 
+}
+
+.welcome-content p{
+    color: #444;
+    font-size: 25px; 
+    text-align: justify; 
+  
+}
+
+h2{
+    width: fit-content;
+    font-size: 37px;
+    margin-top: 40px;
+}
+
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  li {
+    font: 200 18px/1.5 Helvetica, Verdana, sans-serif;
+    border-bottom: 1px solid #ccc;
+    width: fit-content;
+  }
+  
+  li:last-child {
+    border: none;
+  }
+  
+  li a {
+    text-decoration: none;
+    color: #000;
+  
+    -webkit-transition: font-size 0.3s ease, background-color 0.3s ease;
+    -moz-transition: font-size 0.3s ease, background-color 0.3s ease;
+    -o-transition: font-size 0.3s ease, background-color 0.3s ease;
+    -ms-transition: font-size 0.3s ease, background-color 0.3s ease;
+    transition: font-size 0.3s ease, background-color 0.3s ease;
+    display: block;
+    width: 200px;
+  }
+  
+  li a:hover {
+    font-size: 30px;
+    background: #f6f6f6;
+  }
+
+  .login{
+    margin: auto; 
+    width: 66%;
+    background: black; 
+  }
+  

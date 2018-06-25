@@ -1,0 +1,69 @@
+<div class="measure">
+<div class="form-group">
+  <label for="exampleInputEmail1">Dose Before Food</label>
+  <input [(ngModel)]="measuredata.dose"  type="number" class="form-control"  id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Dose">
+</div>
+<div class="form-group">
+  <label for="selectDose"> Select Dose type</label>
+<select class="form-control" id="selectDose">
+    <option value=33>Regular insulin dose </option>
+    <option value=34>NPH insulin dose</option>
+    <option value=35>UltraLente insulin dose</option>
+  </select>
+</div>
+
+<br>
+<div class="form-group">
+  <label for="exampleInputPassword1">Suger Reading</label>
+  <input [(ngModel)]="measuredata.reading"  type="number" class="form-control" id="exampleInputPassword1" placeholder="Measure Before">
+</div>
+<div class="form-group">
+  <label for="selectDose"> Select Measurement Type</label>
+
+<select [(ngModel)]="measuredata.code"  class="form-control" id="selectDose">
+    <!-- <option disabled selected selected> -- select measurement type option -- </option> -->
+    <option selected value=48>Unspecified blood glucose measurement </option>
+    <option value=57> Unspecified blood glucose measurement </option>
+    <option value=58>Pre-breakfast blood glucose measurement</option>
+    <option value=59>Post-breakfast blood glucose measurement</option>
+    <option value=60>Pre-lunch blood glucose measurement </option>
+    <option value=61>Post-lunch blood glucose measurement </option>
+    <option value=62>Pre-supper blood glucose measurement </option>
+    <option value=63> Post-supper blood glucose measurement  </option>
+    <option value=64>Pre-snack blood glucose measurement </option>
+  </select>
+</div>
+
+<br>
+
+<div class="form-group">
+    <label for="exampleInputPassword1">Date of measurement</label>
+    <input  type="date" class="form-control" id="exampleInputPassword1" placeholder="Calories">
+  </div>
+  <div class="form-group">
+      <label for="exampleInputPassword1">Time of Event</label>
+      <input  type="time" class="form-control" id="exampleInputPassword1" placeholder="Measure After">
+    </div>
+<button data-toggle="modal" data-target="#exampleModal" type="submit" id="submit" (click)="SubmitData()" class="btn btn-lg btn-success">Submit</button>
+</div>
+
+
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Your Predicted Reading</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        {{predictedValue}}
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>

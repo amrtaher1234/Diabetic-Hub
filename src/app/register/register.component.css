@@ -1,0 +1,61 @@
+
+
+.form-wrapper
+{
+    background: lightgoldenrodyellow;
+    min-height: 280px;
+    padding: 20px; 
+}
+
+
+.form
+{
+    display: flex;
+    width: 90%;
+    margin: auto;
+    flex-direction: column; 
+    
+}
+
+form mat-form-field
+{
+    width: 80%;
+}
+form button{
+    display: block;
+}
+form h3, p{
+    font-weight: normal; 
+}
+
+
+input{
+    height: 1.5rem;
+}
+
+
+.form button
+{
+    margin-bottom: 10px; 
+}
+
+.ng-valid[required], .ng-valid.required  {
+
+    border-right: 5px solid rgb(64, 177, 70); /* green */
+  }
+
+  input.ng-invalid:not(form)  {
+    border-right: 5px solid #a94442; /* red */
+  }
+
+
+
+  .form-control
+  {
+      margin-right: 15px; 
+  }
+  @media screen and (max-width: 600px) {
+    .form-wrapper {
+        width: 70%;
+    }
+}
