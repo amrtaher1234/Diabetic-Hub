@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FirebaseService } from '../firebase.service';
 import {User , UserInterface} from '../User';
 import { trigger, transition, style, animate } from '@angular/animations';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-form',
   templateUrl: './form.component.html',
@@ -16,7 +17,8 @@ import { trigger, transition, style, animate } from '@angular/animations';
 })
 export class FormComponent implements OnInit {
 
-  constructor(private firebaseservice : FirebaseService) { }
+  constructor(public router: Router , 
+     private firebaseservice : FirebaseService) { }
 
 
   user = new User('', 1 , '' , ''); 
@@ -33,6 +35,7 @@ export class FormComponent implements OnInit {
     .then(user => {
       console.log(user)
       localStorage.setItem("key" ,user['user']['uid']);
+      this.router.navigateByUrl('/main'); 
       console.log(localStorage.getItem('key'));
     })
     .catch((err) => console.log(err)); 

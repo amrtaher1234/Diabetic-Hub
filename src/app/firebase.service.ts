@@ -45,10 +45,31 @@ public login(user : UserInterface)
 }
 
 
-public pushMeasure(measure : MeasureData  , key )
+public pushMeasure(measure : MeasureData   )
 {
-  this.db.list(`/Measures/${key}/Measurements`).push(measure); 
+  return new Promise((resolve , reject)=>
+{
+  if (localStorage.getItem("key"))
+  {
+    measure.key = localStorage.getItem("key"); 
+    this.db.list(`/Measures/`).push(measure).then(d => resolve(d)); 
+  }
+  else{
+  this.db.list(`/Measures/`).push(measure).then(d => resolve(d));
+  } 
+})
   
+}
+
+public getHistory()
+{
+  console.log(localStorage.getItem("key"));
+  return new Promise((resolve , reject)=>{
+
+    this.db.list('/items', ref => ref.orderByChild('key').equalTo(localStorage.getItem('key'))).valueChanges().
+    subscribe(d => console.log(d)); 
+
+  })
 }
 
 }

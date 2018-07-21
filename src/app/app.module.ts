@@ -12,7 +12,7 @@ import { HttpClientModule } from '@angular/common/http';
 
 import {FlexLayoutModule, BREAKPOINT} from '@angular/flex-layout';
 import {AngularFireDatabaseModule} from 'angularfire2/database'; 
-import { AngularFireModule } from 'angularfire2/firebase.app.module';
+import { AngularFireModule  } from 'angularfire2';
 import { AngularFirestoreModule } from 'angularfire2/firestore';
 import { AngularFireStorageModule } from 'angularfire2/storage';
 import { AngularFireAuthModule, AngularFireAuth } from 'angularfire2/auth';
@@ -27,8 +27,16 @@ import { MainComponent } from './main/main.component';
 import { MeasureComponent } from './measure/measure.component';
 import { HistoryComponent } from './history/history.component';
 import { ScrollToModule } from 'ng2-scroll-to-el';
+import { RestService } from './rest.service';
 
-
+let firebase = {
+    apiKey: "AIzaSyC-30waTwPCcTDyvRpWLw72rb7zBl3aIJU",
+    authDomain: "diabeticdata.firebaseapp.com",
+    databaseURL: "https://diabeticdata.firebaseio.com",
+    projectId: "diabeticdata",
+    storageBucket: "diabeticdata.appspot.com",
+    messagingSenderId: "1022348581186"
+}
 
 @NgModule({
   declarations: [
@@ -61,7 +69,8 @@ import { ScrollToModule } from 'ng2-scroll-to-el';
     AppRoutingModule,
 
   ],
-  providers: [FirebaseService],
+  providers: [
+    FirebaseService , RestService],
   bootstrap: [AppComponent]//
 })
 export class AppModule { }

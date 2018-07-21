@@ -21,7 +21,10 @@ export interface MeasureData{
     code : string , 
     dose : string, 
     reading: string , 
-    td : string
+    td : string,
+    key?:string , 
+    time?:any,
+    
 }
 
 export interface UserInterface{

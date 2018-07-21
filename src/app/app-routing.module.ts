@@ -8,12 +8,13 @@ import { HistoryComponent } from './history/history.component';
 
 const routes: Routes = [
 
-    { path: '', redirectTo: '/main', pathMatch: 'full' },
+    { path: '', redirectTo: '/welcome', pathMatch: 'full' },
     {path: 'welcome' , component: WelcomeComponent },
     {path:'main' , component:MainComponent , 
    children :[
        {path: '' , component: MeasureComponent }, 
        {path :'history' , component: HistoryComponent},
+       
 ] },
 
   ];

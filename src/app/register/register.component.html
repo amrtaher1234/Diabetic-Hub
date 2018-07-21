@@ -12,21 +12,20 @@
       
 
     <mat-form-field>
-      <input [(ngModel)]="_User.email" #email="ngModel" minlength="5" class="form-control" [(ngModel)]="Email"  type="email" matInput placeholder="Email" required name="Email">
+      <input [(ngModel)]="_User.email" #email="ngModel" minlength="5" class="form-control"  type="email" matInput placeholder="Email" required name="Email">
     </mat-form-field>
     
     
     <div>
       <mat-form-field>
-      <input [(ngModel)]="_User.password" #password="ngModel" class="form-control" [(ngModel)]="Password"  type="password" matInput placeholder="Password"  required name="Password">
+      <input [(ngModel)]="_User.password" #password="ngModel" class="form-control"   type="password" matInput placeholder="Password"  required name="Password">
     </mat-form-field>
     
     <mat-form-field>
         <input [(ngModel)]='_User.age' name="age" #age='ngModel' required class="form-control"  type="number" matInput placeholder="Age">
       </mat-form-field>
     
-      <div *ngIf="incorrect" class="alert alert-danger">Password or Email are not correct</div>
-    
+   
     
     <button [disabled]="!email.valid || !password.valid" type="submit" mat-raised-button color="primary">Sign Up</button>
       </div>

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MeasureData } from '../User';
 import { RestService } from '../rest.service';
+import { FirebaseService } from '../firebase.service';
 
 @Component({
   selector: 'app-measure',
@@ -11,7 +12,8 @@ export class MeasureComponent implements OnInit {
 
   measuredata = {} as MeasureData;
   predictedValue : any;
-  constructor(private rest : RestService) {
+  constructor(private fb : FirebaseService ,
+     private rest : RestService) {
     this.measuredata.td="4"; 
    }
 
@@ -21,8 +23,16 @@ export class MeasureComponent implements OnInit {
   SubmitData()
   {
     this.rest.getPrediction(this.measuredata)
-    .then(data =>this.predictedValue = parseInt(data[0]))
+    .then(data =>{
+      console.log(data); 
+      this.predictedValue = parseInt(data[0]);
+    })
     .catch(err => console.log(err)); 
-
+  }
+  UploadData()
+  {
+    var x = new Date(); 
+    this.measuredata.time = x.getDate() + " " + x.getFullYear() + " " + x.getHours() ; 
+    this.fb.pushMeasure(this.measuredata).then(d => console.log("success")).catch();
   }
 }

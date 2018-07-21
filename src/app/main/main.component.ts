@@ -11,5 +11,12 @@ export class MainComponent implements OnInit {
 
   ngOnInit() {
   }
-
+  goRegister()
+  {
+    console.log("ayhaga"); 
+  }
+  goLogin()
+  {
+    console.log("nvm"); 
+  }
 }

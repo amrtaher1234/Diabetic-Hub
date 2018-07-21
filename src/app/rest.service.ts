@@ -13,17 +13,21 @@ export class RestService {
   public getPrediction(measure : MeasureData)
   {
     let c = new HttpHeaders({ 'Access-Control-Allow-Origin': '*',
-    'Access-Control-Allow-Methods': 'GET, POST, OPTIONS, PUT, PATCH, DELETE',
-    'Access-Control-Allow-Headers': 'X-Requested-With,content-type',
-    'Access-Control-Allow-Credentials': "true" ,
    });
    return new Promise((resolve , reject) =>{
 
-    this.http.post("http://algorhym3.pythonanywhere.com/predict" , measure)
+    this.http.post("https://algorhym3.pythonanywhere.com/predict" , measure , {headers : c})
     .toPromise().
     then(data => resolve(data))
     .catch(err => reject(err));
    })
    
+  }
+  public GetPrediction(measure : MeasureData)
+  {
+    return new Promise((resolve , reject)=>{
+      this.http.get(`https://algorhym3.pythonanywhere.com/predict?code=${measure.code}
+      &dose=${measure.dose}&reading=${measure.reading}&td=${measure.td}`)
+    })
   }
 }
